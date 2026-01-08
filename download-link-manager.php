@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: Download Link Manager Pro
+ * Plugin Name: Download Link Manager
  * Plugin URI: https://deeaytee.xyz
  * Description: Quản lý link tải về với trang đếm ngược, quảng cáo và thống kê
  * Version: 2.0.1
- * Author: DeeAyTee - Đạt Nguyễn
+ * Author: Đạt Nguyễn (DeeAyTee)
  * Author URI: https://deeaytee.xyz
  * Text Domain: download-link-manager
  */

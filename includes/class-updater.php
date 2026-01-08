@@ -1,4 +1,8 @@
 <?php
+/**
+ * Plugin Auto-Updater
+ * Hỗ trợ cập nhật plugin từ GitHub hoặc server riêng
+ */
 
 if (!defined('ABSPATH')) {
     exit;
@@ -29,11 +33,7 @@ class DLM_Updater {
         // Chọn 1 trong 2 phương thức:
         
         // PHƯƠNG THỨC 1: Từ GitHub (Miễn phí, dễ dùng)
-        $this->update_url = 'https://api.github.com/repos/TekachiNguyen/download-link-manager/releases/latest';
-        
-        // PHƯƠNG THỨC 2: Từ server riêng (Tự control hoàn toàn)
-        // $this->update_url = 'https://yoursite.com/plugin-updates/download-link-manager.json';
-        
+        $this->update_url = 'https://api.github.com/repos/DeeAyTee/download-link-manager/releases/latest';
         $this->cache_key = 'dlm_update_' . $this->plugin_slug;
         $this->cache_allowed = true;
         
@@ -191,7 +191,7 @@ $plugin_info = array(
             'author' => '<a href="https://deeaytee.xyz">' . (!empty($update_info['author']) ? $update_info['author'] : 'DeeAyTee') . '</a>',
             
             // Sửa trang chủ thành link Repository
-            'homepage' => !empty($update_info['homepage']) ? $update_info['homepage'] : 'https://github.com/TekachiNguyen/download-link-manager',
+            'homepage' => !empty($update_info['homepage']) ? $update_info['homepage'] : 'https://github.com/DeeAyTee/download-link-manager',
             
             // Cập nhật các thông số kỹ thuật cho hợp thời (ví dụ)
             'requires' => !empty($update_info['requires']) ? $update_info['requires'] : '6.0', // Yêu cầu WP 6.0 trở lên
