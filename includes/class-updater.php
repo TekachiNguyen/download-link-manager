@@ -29,10 +29,10 @@ class DLM_Updater {
         // Chọn 1 trong 2 phương thức:
         
         // PHƯƠNG THỨC 1: Từ GitHub (Miễn phí, dễ dùng)
-        // $this->update_url = 'https://api.github.com/repos/YOUR_USERNAME/YOUR_REPO/releases/latest';
+        $this->update_url = 'https://api.github.com/repos/TekachiNguyen/download-link-manager/releases/latest';
         
         // PHƯƠNG THỨC 2: Từ server riêng (Tự control hoàn toàn)
-        $this->update_url = 'https://yoursite.com/plugin-updates/download-link-manager.json';
+        // $this->update_url = 'https://yoursite.com/plugin-updates/download-link-manager.json';
         
         $this->cache_key = 'dlm_update_' . $this->plugin_slug;
         $this->cache_allowed = true;
@@ -182,20 +182,30 @@ class DLM_Updater {
             return $result;
         }
         
-        $plugin_info = array(
-            'name' => 'Download Link Manager Pro',
+$plugin_info = array(
+            'name' => 'Download Link Manager', // Tên plugin (bỏ chữ Pro nếu không phải bản trả phí)
             'slug' => $this->plugin_slug,
             'version' => $update_info['version'],
-            'author' => '<a href="https://yoursite.com">' . (!empty($update_info['author']) ? $update_info['author'] : 'Your Name') . '</a>',
-            'homepage' => !empty($update_info['homepage']) ? $update_info['homepage'] : 'https://yoursite.com',
-            'requires' => !empty($update_info['requires']) ? $update_info['requires'] : '5.0',
+            
+            // Sửa link website thành GitHub profile của bạn
+            'author' => '<a href="https://deeaytee.xyz">' . (!empty($update_info['author']) ? $update_info['author'] : 'DeeAyTee') . '</a>',
+            
+            // Sửa trang chủ thành link Repository
+            'homepage' => !empty($update_info['homepage']) ? $update_info['homepage'] : 'https://github.com/TekachiNguyen/download-link-manager',
+            
+            // Cập nhật các thông số kỹ thuật cho hợp thời (ví dụ)
+            'requires' => !empty($update_info['requires']) ? $update_info['requires'] : '6.0', // Yêu cầu WP 6.0 trở lên
             'tested' => !empty($update_info['tested']) ? $update_info['tested'] : '6.4',
-            'requires_php' => !empty($update_info['requires_php']) ? $update_info['requires_php'] : '7.0',
+            'requires_php' => !empty($update_info['requires_php']) ? $update_info['requires_php'] : '7.4', // Nên để PHP 7.4 hoặc 8.0
+            
             'last_updated' => !empty($update_info['last_updated']) ? $update_info['last_updated'] : date('Y-m-d'),
+            
             'sections' => array(
                 'description' => 'Quản lý link tải về với trang đếm ngược, quảng cáo và thống kê chi tiết.',
-                'changelog' => !empty($update_info['changelog']) ? $update_info['changelog'] : 'Xem chi tiết trên trang chủ plugin.'
+                // Phần Changelog này sẽ lấy nội dung bạn viết trong GitHub Release
+                'changelog' => !empty($update_info['changelog']) ? nl2br($update_info['changelog']) : 'Xem chi tiết trên trang chủ plugin.' 
             ),
+            
             'download_link' => $update_info['download_url']
         );
         
