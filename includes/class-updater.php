@@ -1,4 +1,8 @@
 <?php
+/**
+ * Plugin Auto-Updater
+ * Hỗ trợ cập nhật plugin từ GitHub hoặc server riêng
+ */
 
 if (!defined('ABSPATH')) {
     exit;
@@ -29,10 +33,10 @@ class DLM_Updater {
         // Chọn 1 trong 2 phương thức:
         
         // PHƯƠNG THỨC 1: Từ GitHub (Miễn phí, dễ dùng)
-        // $this->update_url = 'https://api.github.com/repos/YOUR_USERNAME/YOUR_REPO/releases/latest';
+        // $this->update_url = 'https://api.github.com/repos/DeeAyTee/download-link-manager/releases/latest';
         
         // PHƯƠNG THỨC 2: Từ server riêng (Tự control hoàn toàn)
-        $this->update_url = 'https://yoursite.com/plugin-updates/download-link-manager.json';
+        // $this->update_url = 'https://yoursite.com/plugin-updates/download-link-manager.json';
         
         $this->cache_key = 'dlm_update_' . $this->plugin_slug;
         $this->cache_allowed = true;
