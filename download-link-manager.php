@@ -3,7 +3,7 @@
  * Plugin Name: Download Link Manager Pro
  * Plugin URI: https://example.com
  * Description: Quản lý link tải về với trang đếm ngược, quảng cáo và thống kê
- * Version: 2.0.0
+ * Version: 2.0.1
  * Author: Your Name
  * Text Domain: download-link-manager
  */
@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define constants
-define('DLM_VERSION', '2.0.0');
+define('DLM_VERSION', '2.0.1');
 define('DLM_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('DLM_PLUGIN_URL', plugin_dir_url(__FILE__));
 
@@ -23,6 +23,7 @@ require_once DLM_PLUGIN_DIR . 'includes/class-admin.php';
 require_once DLM_PLUGIN_DIR . 'includes/class-shortcode.php';
 require_once DLM_PLUGIN_DIR . 'includes/class-countdown.php';
 require_once DLM_PLUGIN_DIR . 'includes/class-ajax.php';
+require_once DLM_PLUGIN_DIR . 'includes/class-updater.php';
 
 // Create directories on activation
 function dlm_create_directories() {
@@ -69,6 +70,7 @@ class DLM_Plugin {
         DLM_Shortcode::get_instance();
         DLM_Countdown::get_instance();
         DLM_Ajax::get_instance();
+        DLM_Updater::get_instance(); // Auto-update
     }
 }
 
