@@ -141,6 +141,13 @@ if (!defined('ABSPATH')) exit;
         </div>
     <?php endif; ?>
     
+    <div class="dlm-footer-copyright">
+        <p>
+            © <?php echo date('Y'); ?> <strong>Download Link Manager Pro</strong> | 
+            Powered by <a href="https://deeaytee.xyz" target="_blank">Đạt Nguyễn (DeeAyTee)</a>
+        </p>
+    </div>
+    
     <script>
         const countdownTime = <?php echo $link->countdown_time; ?>;
         const linkId = <?php echo $link_id; ?>;

@@ -98,3 +98,36 @@ if (!defined('ABSPATH')) exit;
         </div>
     </div>
 </div>
+
+<div class="dlm-copyright-footer">
+    <p>
+        © <?php echo date('Y'); ?> <strong>Download Link Manager Pro</strong> | 
+        Developed by <a href="https://deeaytee.xyz" target="_blank">Đạt Nguyễn (DeeAyTee)</a> | 
+        Version <?php echo DLM_VERSION; ?>
+    </p>
+</div>
+
+<style>
+.dlm-copyright-footer {
+    background: #f0f0f1;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+    border-top: 3px solid #2271b1;
+    border-radius: 4px;
+}
+.dlm-copyright-footer p {
+    margin: 0;
+    color: #50575e;
+    font-size: 13px;
+}
+.dlm-copyright-footer a {
+    color: #2271b1;
+    text-decoration: none;
+    font-weight: 600;
+}
+.dlm-copyright-footer a:hover {
+    color: #135e96;
+    text-decoration: underline;
+}
+</style>
